@@ -1,0 +1,230 @@
+{
+  "PylonMetaData": {
+    "ObjectVersion": "1.0.0",
+    "MinRequiredSoftwareVersion": "1.0.0"
+  },
+  "PylonContent": {
+    "Ui": {
+      "UiGraphInputOutput": [
+        {
+          "id": "<GraphInput>",
+          "x": 80,
+          "y": 112
+        },
+        {
+          "id": "<GraphOutput>",
+          "x": 924.2000000000003,
+          "y": 109.13333333333338
+        }
+      ],
+      "UiMdis": [],
+      "UiNodes": [
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "GeometricPatternMatchingPro",
+              "pinDirection": "Input",
+              "pinName": "Image"
+            },
+            {
+              "nodeName": "GeometricPatternMatchingPro",
+              "pinDirection": "Output",
+              "pinName": "Regions"
+            }
+          ],
+          "id": "GeometricPatternMatchingPro",
+          "x": 639,
+          "y": 112.13333333333331
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Calibration",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Calibration",
+          "x": 394.86666666666656,
+          "y": 112.06666666666666
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Camera",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Camera",
+          "x": 155.8,
+          "y": 114.13333333333333
+        }
+      ],
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      }
+    },
+    "Graph": {
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      },
+      "Nodes": [
+        {
+          "Name": "Calibration",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::Calibration",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "calibrationModel": "base64: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"
+          }
+        },
+        {
+          "Name": "Camera",
+          "Enabled": true,
+          "Type": "Plugin::PylonVToolPackageBase::Camera",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "AcquisitionMode": 1,
+            "FixCorruptImages": 1
+          }
+        },
+        {
+          "Name": "GeometricPatternMatchingPro",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::PatternMatching",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "settings": {
+              "SettingsVersion": 1,
+              "matchingModel": "base64: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",
+              "TeachContrast": 10,
+              "TeachContrastIsAuto": false,
+              "TeachEdgeColor": 0,
+              "TeachScalingMethod": 0,
+              "TeachScalingIsoMin": 1.0,
+              "TeachScalingIsoMax": 1.0,
+              "TeachScalingVerticalMin": 1.0,
+              "TeachScalingVerticalMax": 1.0,
+              "TeachScalingHorizontalMin": 1.0,
+              "TeachScalingHorizontalMax": 1.0,
+              "MaxNumMatches": 1,
+              "MaxNumMatchesUnlimited": true,
+              "MinScore": 0.5,
+              "Timeout": 0.02,
+              "TimeoutIsEnabled": false,
+              "ReferencePointManualModeIsEnabled": false,
+              "ReferencePointManualRow": 0.0,
+              "ReferencePointManualColumn": 0.0,
+              "teachState": {
+                "version": 1,
+                "id": 0,
+                "message": "",
+                "severity": 0
+              }
+            }
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Name": "Connection",
+          "Source": "Camera",
+          "Sink": "Calibration",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection2",
+          "Source": "Calibration",
+          "Sink": "GeometricPatternMatchingPro",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection3",
+          "Source": "Calibration",
+          "Sink": "GeometricPatternMatchingPro",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Transformation",
+          "SinkInputPath": "Transformation"
+        },
+        {
+          "Name": "Connection4",
+          "Source": "GeometricPatternMatchingPro",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Scores",
+          "SinkInputPath": "Scores"
+        },
+        {
+          "Name": "Connection5",
+          "Source": "GeometricPatternMatchingPro",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Positions_px",
+          "SinkInputPath": "Positions_px"
+        },
+        {
+          "Name": "Connection6",
+          "Source": "GeometricPatternMatchingPro",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Regions",
+          "SinkInputPath": "Regions"
+        }
+      ],
+      "GraphInput": {
+        "NodeData": {
+          "Outputs": []
+        }
+      },
+      "GraphOutput": {
+        "NodeData": {
+          "Inputs": [
+            {
+              "Name": "Scores",
+              "Type": "Pylon::DataProcessing::Core::IFloatArray"
+            },
+            {
+              "Name": "Positions_px",
+              "Type": "Pylon::DataProcessing::Core::IPointFArray"
+            },
+            {
+              "Name": "Regions",
+              "Type": "Pylon::DataProcessing::Core::IRegionArray"
+            }
+          ]
+        }
+      },
+      "Resources": {
+        "ThreadPool": {
+          "PylonMetaData": {
+            "ObjectVersion": "1.0.0",
+            "MinRequiredSoftwareVersion": "1.0.0"
+          },
+          "MaxThreadCount": 8
+        }
+      }
+    }
+  }
+}

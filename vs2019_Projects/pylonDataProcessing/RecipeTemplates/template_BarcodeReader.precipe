@@ -1,0 +1,160 @@
+{
+  "PylonMetaData": {
+    "ObjectVersion": "1.0.0",
+    "MinRequiredSoftwareVersion": "1.0.0"
+  },
+  "PylonContent": {
+    "Ui": {
+      "UiGraphInputOutput": [
+        {
+          "id": "<GraphInput>",
+          "x": 80,
+          "y": 108.5
+        },
+        {
+          "id": "<GraphOutput>",
+          "x": 805.1999999999999,
+          "y": 104.49999999999997
+        }
+      ],
+      "UiMdis": [],
+      "UiNodes": [
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Camera",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Camera",
+          "x": 208.79999999999995,
+          "y": 109.80000000000001
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "BarcodeReader",
+              "pinDirection": "Input",
+              "pinName": "Image"
+            },
+            {
+              "nodeName": "BarcodeReader",
+              "pinDirection": "Output",
+              "pinName": "Texts"
+            },
+            {
+              "nodeName": "BarcodeReader",
+              "pinDirection": "Output",
+              "pinName": "Regions"
+            }
+          ],
+          "id": "BarcodeReader",
+          "x": 503.20000000000005,
+          "y": 106.80000000000001
+        }
+      ],
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      }
+    },
+    "Graph": {
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      },
+      "Nodes": [
+        {
+          "Name": "BarcodeReader",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::Barcode",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "bs": {
+              "BsVersion": 1,
+              "BarcodeType1": 0,
+              "BarcodeType2": 0,
+              "MaxNumBarcodes": 1,
+              "DetectionTimeout": 0.02,
+              "DetectionTimeoutEnabled": false
+            }
+          }
+        },
+        {
+          "Name": "Camera",
+          "Enabled": true,
+          "Type": "Plugin::PylonVToolPackageBase::Camera",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "AcquisitionMode": 1,
+            "FixCorruptImages": 1
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Name": "Connection",
+          "Source": "Camera",
+          "Sink": "BarcodeReader",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection2",
+          "Source": "BarcodeReader",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Texts",
+          "SinkInputPath": "Texts"
+        },
+        {
+          "Name": "Connection3",
+          "Source": "BarcodeReader",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Regions",
+          "SinkInputPath": "Regions"
+        }
+      ],
+      "GraphInput": {
+        "NodeData": {
+          "Outputs": []
+        }
+      },
+      "GraphOutput": {
+        "NodeData": {
+          "Inputs": [
+            {
+              "Name": "Texts",
+              "Type": "Pylon::DataProcessing::Core::IStringArray"
+            },
+            {
+              "Name": "Regions",
+              "Type": "Pylon::DataProcessing::Core::IRegionArray"
+            }
+          ]
+        }
+      },
+      "Resources": {
+        "ThreadPool": {
+          "PylonMetaData": {
+            "ObjectVersion": "1.0.0",
+            "MinRequiredSoftwareVersion": "1.0.0"
+          },
+          "MaxThreadCount": 8
+        }
+      }
+    }
+  }
+}

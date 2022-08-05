@@ -1,0 +1,133 @@
+{
+  "PylonMetaData": {
+    "ObjectVersion": "1.0.0",
+    "MinRequiredSoftwareVersion": "1.0.0"
+  },
+  "PylonContent": {
+    "Ui": {
+      "UiGraphInputOutput": [
+        {
+          "id": "<GraphInput>",
+          "x": 80,
+          "y": 91
+        },
+        {
+          "id": "<GraphOutput>",
+          "x": 692.0000000000001,
+          "y": 85.39999999999998
+        }
+      ],
+      "UiMdis": [],
+      "UiNodes": [
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "ImageFormatConverter",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "ImageFormatConverter",
+          "x": 420.19999999999993,
+          "y": 84.39999999999998
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Camera",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Camera",
+          "x": 168,
+          "y": 85
+        }
+      ],
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      }
+    },
+    "Graph": {
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      },
+      "Nodes": [
+        {
+          "Name": "Camera",
+          "Enabled": true,
+          "Type": "Plugin::PylonVToolPackageBase::Camera",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "AcquisitionMode": 1,
+            "FixCorruptImages": 1
+          }
+        },
+        {
+          "Name": "ImageFormatConverter",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageBase::ImageFormatConverter",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "OutputPixelFormat": 17301505,
+            "OutputOrientation": "Unchanged",
+            "OutputBitAlignment": "LsbAligned",
+            "OutputPaddingX": 0
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Name": "Connection",
+          "Source": "Camera",
+          "Sink": "ImageFormatConverter",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection2",
+          "Source": "ImageFormatConverter",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        }
+      ],
+      "GraphInput": {
+        "NodeData": {
+          "Outputs": []
+        }
+      },
+      "GraphOutput": {
+        "NodeData": {
+          "Inputs": [
+            {
+              "Name": "Image",
+              "Type": "Pylon::DataProcessing::Core::IImage"
+            }
+          ]
+        }
+      },
+      "Resources": {
+        "ThreadPool": {
+          "PylonMetaData": {
+            "ObjectVersion": "1.0.0",
+            "MinRequiredSoftwareVersion": "1.0.0"
+          },
+          "MaxThreadCount": 12
+        }
+      }
+    }
+  }
+}

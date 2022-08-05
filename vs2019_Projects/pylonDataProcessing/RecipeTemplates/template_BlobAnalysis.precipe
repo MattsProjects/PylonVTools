@@ -1,0 +1,335 @@
+{
+  "PylonMetaData": {
+    "ObjectVersion": "1.0.0",
+    "MinRequiredSoftwareVersion": "1.0.0"
+  },
+  "PylonContent": {
+    "Ui": {
+      "UiGraphInputOutput": [
+        {
+          "id": "<GraphInput>",
+          "x": -45.80000000000001,
+          "y": -60
+        },
+        {
+          "id": "<GraphOutput>",
+          "x": 1339.0000000000002,
+          "y": -61.60000000000005
+        }
+      ],
+      "UiMdis": [],
+      "UiNodes": [
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "RegionMorphology",
+              "pinDirection": "Output",
+              "pinName": "Regions"
+            }
+          ],
+          "id": "RegionMorphology",
+          "x": 594,
+          "y": 69.40000000000006
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Calibration",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Calibration",
+          "x": 214.39999999999992,
+          "y": 69.80000000000001
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Camera",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Camera",
+          "x": 53.599999999999994,
+          "y": -65.19999999999999
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "RegionSelection",
+              "pinDirection": "Output",
+              "pinName": "Regions"
+            }
+          ],
+          "id": "RegionSelection",
+          "x": 823.5999999999999,
+          "y": -61.99999999999997
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "RegionFeatureExtraction",
+              "pinDirection": "Input",
+              "pinName": "Regions"
+            },
+            {
+              "nodeName": "RegionFeatureExtraction",
+              "pinDirection": "Output",
+              "pinName": "Areas_px"
+            }
+          ],
+          "id": "RegionFeatureExtraction",
+          "x": 1065.0000000000002,
+          "y": 73.20000000000005
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "AbsoluteThresholding",
+              "pinDirection": "Input",
+              "pinName": "Image"
+            },
+            {
+              "nodeName": "AbsoluteThresholding",
+              "pinDirection": "Output",
+              "pinName": "Region"
+            }
+          ],
+          "id": "AbsoluteThresholding",
+          "x": 463.5999999999998,
+          "y": -63.8
+        }
+      ],
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      }
+    },
+    "Graph": {
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      },
+      "Nodes": [
+        {
+          "Name": "AbsoluteThresholding",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::ThresholdAbsolute",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "settings": {
+              "SettingsVersion": 1,
+              "MinGray": 0,
+              "MaxGray": 255
+            }
+          }
+        },
+        {
+          "Name": "Calibration",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::Calibration",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "calibrationModel": "base64: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"
+          }
+        },
+        {
+          "Name": "Camera",
+          "Enabled": true,
+          "Type": "Plugin::PylonVToolPackageBase::Camera",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "AcquisitionMode": 1,
+            "FixCorruptImages": 1
+          }
+        },
+        {
+          "Name": "RegionFeatureExtraction",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::FeatureExtraction",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "RegionFeatures": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        },
+        {
+          "Name": "RegionMorphology",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::RegionMorphology",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "mop": {
+              "MopVersion": 1,
+              "MorphOp": 0,
+              "MaskShape": 0,
+              "MaskRadius": 3.5,
+              "MaskWidth": 3,
+              "MaskHeight": 3,
+              "FindConnected": false
+            }
+          }
+        },
+        {
+          "Name": "RegionSelection",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::RegionSelection",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "rsp": {
+              "RspVersion": 1,
+              "AreaMin": 1.0,
+              "AreaMax": 999999.0,
+              "AreaMaxIsUnlimited": true,
+              "AreaUnit": 1,
+              "AreaIsEnabled": true,
+              "RoundnessMin": 0.75,
+              "RoundnessMax": 1.0,
+              "RoundnessIsEnabled": false,
+              "RectangularityMin": 0.75,
+              "RectangularityMax": 1.0,
+              "RectangularityIsEnabled": false
+            }
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Name": "Connection",
+          "Source": "Camera",
+          "Sink": "Calibration",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection2",
+          "Source": "AbsoluteThresholding",
+          "Sink": "RegionMorphology",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Region",
+          "SinkInputPath": "Regions"
+        },
+        {
+          "Name": "Connection3",
+          "Source": "Calibration",
+          "Sink": "AbsoluteThresholding",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection4",
+          "Source": "RegionFeatureExtraction",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Areas_px",
+          "SinkInputPath": "Areas_px"
+        },
+        {
+          "Name": "Connection5",
+          "Source": "RegionMorphology",
+          "Sink": "RegionSelection",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Regions",
+          "SinkInputPath": "Regions"
+        },
+        {
+          "Name": "Connection6",
+          "Source": "RegionSelection",
+          "Sink": "RegionFeatureExtraction",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Regions",
+          "SinkInputPath": "Regions"
+        },
+        {
+          "Name": "Connection7",
+          "Source": "Calibration",
+          "Sink": "RegionSelection",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Transformation",
+          "SinkInputPath": "Transformation"
+        },
+        {
+          "Name": "Connection8",
+          "Source": "Calibration",
+          "Sink": "RegionFeatureExtraction",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Transformation",
+          "SinkInputPath": "Transformation"
+        },
+        {
+          "Name": "Connection9",
+          "Source": "RegionFeatureExtraction",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Centers_px",
+          "SinkInputPath": "Centers_px"
+        }
+      ],
+      "GraphInput": {
+        "NodeData": {
+          "Outputs": []
+        }
+      },
+      "GraphOutput": {
+        "NodeData": {
+          "Inputs": [
+            {
+              "Name": "Areas_px",
+              "Type": "Pylon::DataProcessing::Core::IFloatArray"
+            },
+            {
+              "Name": "Centers_px",
+              "Type": "Pylon::DataProcessing::Core::IPointFArray"
+            }
+          ]
+        }
+      },
+      "Resources": {
+        "ThreadPool": {
+          "PylonMetaData": {
+            "ObjectVersion": "1.0.0",
+            "MinRequiredSoftwareVersion": "1.0.0"
+          },
+          "MaxThreadCount": 8
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "PylonMetaData": {
+    "ObjectVersion": "1.0.0",
+    "MinRequiredSoftwareVersion": "1.0.0"
+  },
+  "PylonContent": {
+    "Ui": {
+      "UiGraphInputOutput": [
+        {
+          "id": "<GraphInput>",
+          "x": 80,
+          "y": 108.5
+        },
+        {
+          "id": "<GraphOutput>",
+          "x": 989.3999999999999,
+          "y": 106.80000000000004
+        }
+      ],
+      "UiMdis": [],
+      "UiNodes": [
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Calibration",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Calibration",
+          "x": 422.8000000000003,
+          "y": 109.99999999999997
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Camera",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Camera",
+          "x": 173.2000000000001,
+          "y": 111.60000000000002
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Measurements",
+              "pinDirection": "Input",
+              "pinName": "Image"
+            },
+            {
+              "nodeName": "Measurements",
+              "pinDirection": "Output",
+              "pinName": "Regions"
+            }
+          ],
+          "id": "Measurements",
+          "x": 680.1560271121932,
+          "y": 110.79999999999998
+        }
+      ],
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      }
+    },
+    "Graph": {
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      },
+      "Nodes": [
+        {
+          "Name": "Calibration",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::Calibration",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "calibrationModel": "base64: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"
+          }
+        },
+        {
+          "Name": "Camera",
+          "Enabled": true,
+          "Type": "Plugin::PylonVToolPackageBase::Camera",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "AcquisitionMode": 1,
+            "FixCorruptImages": 1
+          }
+        },
+        {
+          "Name": "Measurements",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::Metrology1D",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "settings": {
+              "SettingsVersion": 1,
+              "Rectangle2": {
+                "RowCenter": 0.0,
+                "ColumnCenter": 0.0,
+                "AngleRad": 0.0,
+                "HalfLength1": 0.0,
+                "HalfLength2": 0.0
+              },
+              "Interpolation": 1,
+              "Sigma": 1.0,
+              "Threshold": 10.0,
+              "Transition": 0,
+              "Select": 3
+            }
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Name": "Connection",
+          "Source": "Camera",
+          "Sink": "Calibration",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection2",
+          "Source": "Calibration",
+          "Sink": "Measurements",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection3",
+          "Source": "Calibration",
+          "Sink": "Measurements",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Transformation",
+          "SinkInputPath": "Transformation"
+        },
+        {
+          "Name": "Connection4",
+          "Source": "Measurements",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Positions_px",
+          "SinkInputPath": "Positions_px"
+        },
+        {
+          "Name": "Connection5",
+          "Source": "Measurements",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Regions",
+          "SinkInputPath": "Regions"
+        }
+      ],
+      "GraphInput": {
+        "NodeData": {
+          "Outputs": []
+        }
+      },
+      "GraphOutput": {
+        "NodeData": {
+          "Inputs": [
+            {
+              "Name": "Positions_px",
+              "Type": "Pylon::DataProcessing::Core::IPointFArray"
+            },
+            {
+              "Name": "Regions",
+              "Type": "Pylon::DataProcessing::Core::IRegionArray"
+            }
+          ]
+        }
+      },
+      "Resources": {
+        "ThreadPool": {
+          "PylonMetaData": {
+            "ObjectVersion": "1.0.0",
+            "MinRequiredSoftwareVersion": "1.0.0"
+          },
+          "MaxThreadCount": 8
+        }
+      }
+    }
+  }
+}

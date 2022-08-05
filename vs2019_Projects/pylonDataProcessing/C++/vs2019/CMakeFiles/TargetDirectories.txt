@@ -1,0 +1,5 @@
+C:/Users/MBreit/Desktop/Samples/pylonDataProcessing/C++/vs2019/CMakeFiles/ALL_BUILD.dir
+C:/Users/MBreit/Desktop/Samples/pylonDataProcessing/C++/vs2019/CMakeFiles/ZERO_CHECK.dir
+C:/Users/MBreit/Desktop/Samples/pylonDataProcessing/C++/vs2019/barcode/CMakeFiles/BarcodeRecipeSample.dir
+C:/Users/MBreit/Desktop/Samples/pylonDataProcessing/C++/vs2019/camera/CMakeFiles/CameraRecipeSample.dir
+C:/Users/MBreit/Desktop/Samples/pylonDataProcessing/C++/vs2019/compositedatatypes/CMakeFiles/CompositeDataTypesSample.dir

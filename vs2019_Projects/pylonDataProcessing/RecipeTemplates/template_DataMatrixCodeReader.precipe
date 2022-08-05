@@ -1,0 +1,158 @@
+{
+  "PylonMetaData": {
+    "ObjectVersion": "1.0.0",
+    "MinRequiredSoftwareVersion": "1.0.0"
+  },
+  "PylonContent": {
+    "Ui": {
+      "UiGraphInputOutput": [
+        {
+          "id": "<GraphInput>",
+          "x": -64.79999999999995,
+          "y": 106.90000000000006
+        },
+        {
+          "id": "<GraphOutput>",
+          "x": 633.2,
+          "y": 102.90000000000006
+        }
+      ],
+      "UiMdis": [],
+      "UiNodes": [
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "DataMatrixCodeReader",
+              "pinDirection": "Input",
+              "pinName": "Image"
+            },
+            {
+              "nodeName": "DataMatrixCodeReader",
+              "pinDirection": "Output",
+              "pinName": "Texts"
+            },
+            {
+              "nodeName": "DataMatrixCodeReader",
+              "pinDirection": "Output",
+              "pinName": "Regions"
+            }
+          ],
+          "id": "DataMatrixCodeReader",
+          "x": 339.4000000000001,
+          "y": 104
+        },
+        {
+          "WatchNodePins": [
+            {
+              "nodeName": "Camera",
+              "pinDirection": "Output",
+              "pinName": "Image"
+            }
+          ],
+          "id": "Camera",
+          "x": 80,
+          "y": 106.40000000000006
+        }
+      ],
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      }
+    },
+    "Graph": {
+      "PylonMetaData": {
+        "ObjectVersion": "1.0.0",
+        "MinRequiredSoftwareVersion": "1.0.0"
+      },
+      "Nodes": [
+        {
+          "Name": "Camera",
+          "Enabled": true,
+          "Type": "Plugin::PylonVToolPackageBase::Camera",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "AcquisitionMode": 1,
+            "FixCorruptImages": 1
+          }
+        },
+        {
+          "Name": "DataMatrixCodeReader",
+          "Enabled": false,
+          "Type": "Plugin::PylonVToolPackageA::DataMatrixCode",
+          "NodeData": {
+            "PylonMetaData": {
+              "ObjectVersion": "1.0.0",
+              "MinRequiredSoftwareVersion": "1.0.0"
+            },
+            "settings": {
+              "SettingsVersion": 1,
+              "MaxNumCodes": 1,
+              "TimeoutSecs": -1.0,
+              "TimeoutEnabled": false
+            }
+          }
+        }
+      ],
+      "Connections": [
+        {
+          "Name": "Connection",
+          "Source": "Camera",
+          "Sink": "DataMatrixCodeReader",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Image",
+          "SinkInputPath": "Image"
+        },
+        {
+          "Name": "Connection2",
+          "Source": "DataMatrixCodeReader",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Texts",
+          "SinkInputPath": "Texts"
+        },
+        {
+          "Name": "Connection3",
+          "Source": "DataMatrixCodeReader",
+          "Sink": "<GraphOutput>",
+          "QueueMode": 3,
+          "MaxSize": 1,
+          "SourceOutputPath": "Regions",
+          "SinkInputPath": "Regions"
+        }
+      ],
+      "GraphInput": {
+        "NodeData": {
+          "Outputs": []
+        }
+      },
+      "GraphOutput": {
+        "NodeData": {
+          "Inputs": [
+            {
+              "Name": "Texts",
+              "Type": "Pylon::DataProcessing::Core::IStringArray"
+            },
+            {
+              "Name": "Regions",
+              "Type": "Pylon::DataProcessing::Core::IRegionArray"
+            }
+          ]
+        }
+      },
+      "Resources": {
+        "ThreadPool": {
+          "PylonMetaData": {
+            "ObjectVersion": "1.0.0",
+            "MinRequiredSoftwareVersion": "1.0.0"
+          },
+          "MaxThreadCount": 8
+        }
+      }
+    }
+  }
+}
